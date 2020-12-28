@@ -1,0 +1,50 @@
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #f0f0f0;
+}
+
+img{
+    width: 100%;
+    height: 25vh;
+}
+
+.left-box{
+    margin-top: 10vh;
+}
+
+.detail-back{
+    text-align: right;
+    color: rgb(255, 166, 25);
+    cursor: pointer;
+}
+
+.site-calendar-demo-card {
+    margin-top: 10vh;
+    width: 300px;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+}
+
+/* 文字 */
+.detail-wrapper{
+    margin-top: 3vh;
+    width: 60vw;
+}
+
+.detail-wrapper h2{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.detail-content{
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.time{
+    display: flex;
+    justify-content: flex-end;
+}
