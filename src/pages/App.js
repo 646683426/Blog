@@ -128,7 +128,7 @@ export default class App extends React.Component {
     }
 
     render() {
-        // 取出分类中的前5个博客用于在首页进行展示
+        // 取出分类中的博客
         const cateArticle = (id) => {
             return this.state.article.filter((item) => {
                 return item.categoryId === id
