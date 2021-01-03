@@ -75,6 +75,7 @@
     border: none;
     color: #1487f4;
     cursor: pointer;
+    outline: none;
 }
 
 .category{

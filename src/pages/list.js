@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import '../style/list.css';
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css';
@@ -15,14 +14,14 @@ export default class List extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://rap2api.taobao.org/app/mock/273293/allArticle').then((res) => {
-            this.setState({
-                article: res.data.article
-            })
+        // 获取更多按钮传过来的值
+        this.setState({
+            article: this.props.location.state.article
         })
     }
 
     render() {
+        // 分页的列表循环
         let list = this.state.article.slice(this.state.minValue, this.state.maxValue).map((item, index) => {
             let detail = { pathname: '/detail', state: { title: item.title, img: item.img, content: item.content } }
             return (
@@ -43,6 +42,14 @@ export default class List extends React.Component {
         })
         return (
             <div className='wrapper'>
+                <h3 className='list-cate'>
+                    当前分类：<span>{this.props.location.state.name}</span>
+                    <button
+                        onClick={()=>{this.props.history.push('/')}}
+                        className='list-back'>
+                        返回首页
+                    </button>
+                </h3>
                 {list}
                 <footer>
                     <Pagination
@@ -50,14 +57,14 @@ export default class List extends React.Component {
                         pageSize={10}
                         pageSizeOptions={[10]}
                         total={this.state.article.length}
-                        current={this.state.current}
-                        showQuickJumper={true} />
+                        current={this.state.current} />
                 </footer>
             </div>
 
         )
     }
 
+    // 点击分页的页数
     changePage = (page) => {
         if (page <= 1) {
             this.setState({

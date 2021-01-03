@@ -6,6 +6,19 @@
     background-color: #f0f0f0;
 }
 
+.list-cate{
+    align-self: flex-start;
+}
+
+.list-back{
+    background-color: #f0f0f0;
+    border: none;
+    color: #ff6600;
+    outline: none;
+    cursor: pointer;
+    margin-left: 5vmin;
+}
+
 .list-blog {
     margin-bottom: 10px;
     height: 10vh;
@@ -58,7 +71,7 @@
 }
 
 .list-title:hover,
-.list-content:hover {
+.list-content:hover{
     color: #1487f4;
 }
 
